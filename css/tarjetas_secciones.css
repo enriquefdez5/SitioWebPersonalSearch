@@ -1,0 +1,13 @@
+/* a=0 b=0 c=1 -> specificity =   1*/
+section {
+    border: solid black;
+    border-width: 0.3em;   
+    border-radius: 0.8em; 
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+    width: 90%;
+    text-align: left;
+}
+
+

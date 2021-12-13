@@ -1,0 +1,6 @@
+/* a=0 b=0 c=1 -> specificity =   1*/
+audio {
+    width: 100%;
+    display: block;
+    margin: auto;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Enrique Fernández Manzano, uo257742@uniovi.es" />
+    <meta name="description" content = "Página web con información sobre los gustos musicales de Enrique" />
+    <meta name="keywords" content="Enrique Fernández Manzano, Appa, biografia, aficiones, deporte, fútbol, triatlón, frontón, música, rock, Galleguillos, pueblo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Css general -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+
+    <!-- Css para video -->
+    <link rel="stylesheet" type="text/css" href="css/video.css"/>
+    
+    <!-- Css para audio -->
+    <link rel="stylesheet" type="text/css" href="css/audio.css"/>
+
+    <!-- Css para tarjetas secciones -->
+    <link rel="stylesheet" type="text/css" href="css/tarjetas_secciones.css"/>
+
+    <!-- Para github -->
+<!--     <base href="https://enriquefdez5.github.io/SitioWebPersonalV3/">-->
+    <!-- Para servidor linux -->
+<!--    <base href="http://156.35.98.103/sitioWebPersonal/"> -->
+
+    <title>Página web de Enrique - Música</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="h1">Música</h1>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Perfil</a>
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link dropdown-toggle " href="aficiones.html" id="aficionesNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Aficiones
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="aficionesNavbarDropdown">
+                                    <li><a class="dropdown-item" href="aficiones.html#futbol">Fútbol</a></li>
+                                    <li><a class="dropdown-item" href="aficiones.html#triatlon">Triatlón</a></li>
+                                    <li><a class="dropdown-item" href="aficiones.html#fronton">Jugar al frontón</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="musica.html">Música</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="pueblo.html" id="puebloNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pueblo
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="puebloNavbarDropdown">
+                                    <li><a class="dropdown-item" href="pueblo.html#campanario">Campanario</a></li>
+                                    <li><a class="dropdown-item" href="pueblo.html#frontonpueblo">Frontón</a></li>
+                                    <li><a class="dropdown-item" href="pueblo.html#iglesia">Iglesia</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main id="main" class="container">
+        <section id="rock" class="container">
+            <h2 class="h2">Rock</h2>
+            <p>
+                Uno de mis géneros de música favoritos es el rock. Dentro del rock existen muchas variantes, entre ellas
+                se encuentran el rock español, con grupos como Extremoduro, Marea, La fuga o Platero y Tú.
+            </p>
+            <p>
+                También me gusta mucho el rock inglés y pop/rock inglés con grupos clásicos como Muse, Linking Park o
+                Billy Talent y otros no tan clásicos como Imagine Dragons o Twenty One Pilots.
+            </p>
+            <audio controls tabindex="0">
+                <source src = "Multimedia/surrender_bt.mp3"
+                        type = "audio/mpeg" />
+                <source src = "Multimedia/surrender_bt.ogg"
+                        type = "audio/ogg" />
+                    <p>El navegador no soporta el audio del tema del grupo Billy Talent cuyo nombre es Surrender.</p>
+            </audio>
+            <p>
+                Otro género que he descubierto recientemente y al que estoy enganchado es el indie rock español con grupos
+                como Vetusta Morla, La MODA o Izal.
+            </p>
+            <video
+                    controls preload = "auto"
+                    width= "500" height="300" tabindex="0">
+                <source src="Multimedia/los_buenos_vm.mp4" type = "video/mp4" />
+                <source src="Multimedia/los_buenos_vm.3gp" type = "video/3gp" />
+                <p>El navegador no soporta el video del tema del grupo Vetusta Morla cuyo nombre es Los Buenos.</p>
+            </video>
+        </section>
+        <section id="pop" class="container">
+            <h2 class="h2">Pop</h2>
+            <p>
+                Aunque no es mi estilo musical favorito, me gustan ciertas canciones de artistas como Rayden o
+                Bely Basarte, entro muchos otros.
+            </p>
+        </section>
+        <section id="regueton" class="container">
+            <h2 class="h2">Reguetón</h2>
+            <p>
+                Por último, detesto profundamente este estilo musical y creo que es necesario dejarlo por escrito
+                en este sitio web sobre mi.
+            </p>
+        </section>
+    </main>
+    <footer class="container">
+        <h2 class="h2">Información de contacto</h2>
+        <address>
+            <p>Teléfono: 689949652</p>
+            <p>Email: <a href="mailto:uo257742@uniovi.es">uo257742@uniovi.es</a></p>
+            <p>Garmin: <a tabindex="0" href="https://connect.garmin.com/modern/profile/7b709ff9-618c-4ddf-9fe4-6c448956de56"> Enrique</a></p>
+            <p>Github: <a tabindex="0" href="https://github.com/enriquefdez5">enriquefdez5</a></p>
+        </address>
+        <h2 class="h2">Accesibilidad</h2>
+        <a href="mapa_sitio.html">Mapa Sitio Web</a>
+    </footer>
+</body>
+</html>
