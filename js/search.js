@@ -41,6 +41,7 @@ window.addEventListener("load", () => {
                     }
                     str.concat("</div></div>")
                     $("#main2").append(str.toString())
+                    $("#search").remove()
                 })
             })
         })
