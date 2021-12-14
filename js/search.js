@@ -19,7 +19,7 @@ function mostrarEnlace(enlace) {
 }
 
 let enlaces = []
-let str = "<div class='container'> <h2>Resultados de la búsqueda</h2><p>Se han encontrado "
+let str = "<div class='container'> <h2>Resultados de la búsqueda</h2>"
 
 window.addEventListener("load", () => {
     const urlParams = new URLSearchParams(window.location.search)
@@ -32,7 +32,10 @@ window.addEventListener("load", () => {
                 recursiveEach($(data3), enlaces, input, "musica.html")
                 $("#search").load("pueblo.html #main", function (data4) {
                     recursiveEach($(data4), enlaces, input, "pueblo.html")
-                    str = str.concat(enlaces.length + " resultados</p><div id='resultados' class='container'>")
+                    if (enlaces.length == 0) {
+                        str = str.concat("<p>No se ha encontrado ningún resultado...</p>")
+                    }
+                    str = str.concat("<p>Se han encontrado " + enlaces.length + " resultados</p><div id='resultados' class='container'>")
                     for (enlace of enlaces) {
                         str = str.concat("<div class='container searchresult'><a class='grande' href='" + enlace.enlace + "'>" + mostrarEnlace(enlace.enlace) + "</a><p>" + enlace.contenido + "</p></div>")
                     }
