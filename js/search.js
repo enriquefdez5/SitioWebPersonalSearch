@@ -35,12 +35,14 @@ window.addEventListener("load", () => {
                     if (enlaces.length == 0) {
                         str = str.concat("<p>No se ha encontrado ningún resultado...</p>")
                     }
-                    str = str.concat("<p>Se han encontrado " + enlaces.length + " resultados</p><div id='resultados' class='container'>")
-                    for (enlace of enlaces) {
-                        str = str.concat("<div class='container searchresult'><a class='grande' href='" + enlace.enlace + "'>" + mostrarEnlace(enlace.enlace) + "</a><p>" + enlace.contenido + "</p></div>")
+                    else {
+                        str = str.concat("<p>Se han encontrado " + enlaces.length + " resultados</p><div id='resultados' class='container'>")
+                        for (enlace of enlaces) {
+                            str = str.concat("<div class='container searchresult'><a class='grande' href='" + enlace.enlace + "'>" + mostrarEnlace(enlace.enlace) + "</a><p>" + enlace.contenido + "</p></div>")
+                        }
+                        str.concat("</div></div>")
+                        $("#main2").append(str.toString())
                     }
-                    str.concat("</div></div>")
-                    $("#main2").append(str.toString())
                     $("#search").remove()
                 })
             })
