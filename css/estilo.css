@@ -58,3 +58,8 @@ a:visited {
 label {
     color: white;
 }
+
+.btn {
+    border-color: white;
+    color: white;
+}
