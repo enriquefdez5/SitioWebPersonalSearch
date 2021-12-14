@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
                 $("#search").load("pueblo.html #main", function (data4) {
                     recursiveEach($(data4), enlaces, input, "pueblo.html")
                     if (enlaces.length == 0) {
-                        str = str.concat("<p>No se ha encontrado ningún resultado...</p>")
+                        str = str.concat("<p>No se ha encontrado ningún resultado...</p></div>")
                     }
                     else {
                         str = str.concat("<p>Se han encontrado " + enlaces.length + " resultados</p><div id='resultados' class='container'>")
