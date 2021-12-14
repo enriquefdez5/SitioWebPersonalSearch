@@ -46,3 +46,12 @@ a:visited {
     background-color: transparent;
     text-decoration: none;
 }
+
+.grande {
+    font-size: 150%;
+}
+.searchresult {
+    margin: 8px;
+    border: solid black 2px;
+    border-radius: 3px;
+}
