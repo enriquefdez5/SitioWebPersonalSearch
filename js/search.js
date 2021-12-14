@@ -1,12 +1,45 @@
 let enlaces = []
+let str = "<h2>Resultados de la búsqueda</h2><div id='resultados' class='container'>"
+
 window.addEventListener("load", () => {
     const urlParams = new URLSearchParams(window.location.search)
     let input = urlParams.get("input")
+    // let str = "<h2>Resultados de la búsqueda</h2><div id='resultados' class='container'>"
     $("#search").load("index.html #main", function (data) {
         recursiveEach($(data), enlaces, input)
-        for (enlace of enlaces) {
-            $("#main2").append("<div class='container'><a href='" + enlace.enlace + "'>" + enlace.enlace + "</a><p>" + enlace.contenido + "</p></div>")
-        }
+        console.log("enlaces 1")
+        console.log(enlaces)
+        console.log("#search 1")
+        console.log($("#search"))
+        $("#search").load("aficiones.html #main", function (data2) {
+            recursiveEach($(data2), enlaces, input)
+            console.log("enlaces 2")
+            console.log(enlaces)
+            console.log("#search 2")
+            console.log($("#search"))
+            $("#search").load("musica.html #main", function (data3) {
+                recursiveEach($(data3), enlaces, input)
+                console.log("enlaces 4")
+                console.log(enlaces)
+                console.log("#search 3")
+                console.log($("#search"))
+                $("#search").load("pueblo.html #main", function (data4) {
+                    recursiveEach($(data4), enlaces, input)
+                    console.log("enlaces 4")
+                    console.log(enlaces)
+                    console.log("#search 4")
+                    console.log($("#search"))
+                    for (enlace of enlaces) {
+                        str = str.concat("<div class='container'><a href='" + enlace.enlace + "'>" + enlace.enlace + "</a><p>" + enlace.contenido + "</p></div>")
+                        // $("#main2").append("<div class='container'><a href='" + enlace.enlace + "'>" + enlace.enlace + "</a><p>" + enlace.contenido + "</p></div>")
+                    }
+                    str.concat("</div)")
+                    console.log("ey")
+                    console.log(str)
+                    $("#main2").append(str.toString())
+                })
+            })
+        })
     })
 })
 function search() {
@@ -24,9 +57,9 @@ function recursiveEach(element, enlaces, input){
     element.children().each(function () {
         var currentElement = $(this);
         for (let elem of currentElement) {
-            console.log(elem.innerText.toLowerCase())
-            console.log(input.toLowerCase())
-            console.log(elem.innerText.toLowerCase().includes(input.toLowerCase()))
+            // console.log(elem.innerText.toLowerCase())
+            // console.log(input.toLowerCase())
+            // console.log(elem.innerText.toLowerCase().includes(input.toLowerCase()))
             if (elem.innerText.toLowerCase().includes(input.toLowerCase()) ) {
                 if (elem.closest("section") !== undefined && elem.closest("section") != null) {
                     enlaces.push({
