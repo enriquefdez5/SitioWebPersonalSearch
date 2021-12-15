@@ -41,8 +41,8 @@ window.addEventListener("load", () => {
                             str = str.concat("<div class='container searchresult'><a class='grande' href='" + enlace.enlace + "'>" + mostrarEnlace(enlace.enlace) + "</a><p>" + enlace.contenido + "</p></div>")
                         }
                         str.concat("</div></div>")
-                        $("#main2").append(str.toString())
                     }
+                    $("#main2").append(str.toString())
                     $("#search").remove()
                 })
             })
