@@ -73,9 +73,17 @@
                                 </ul>
                             </li>
                         </ul>
+                        <!-- Código buscador-->
+                        <!-- Elemento div para agrupar buscador y darle formato-->
                         <div class="d-flex">
+                            <!-- Elemento label para accesibilidad con el buscador. Importante etiqueta for-->
                             <label id="labelForInput" for="searchInput">Buscar:</label>
+                            <!-- Elemento input. Contiene un título para temas de accesibilidad
+                            (se podría eliminar elemento label). Es de tipo buscador. Almacenará el campo que se quiere
+                             buscar.-->
                             <input title="search input" id="searchInput" class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search">
+                            <!-- Botón que hará comenzar la búsqueda cuando se haga click sobre él.
+                            Llama al método search() que está en ./js/search.js -->
                             <button class="btn btn-outline-success" type="submit" onclick="search()">Buscar</button>
                         </div>
                     </div>

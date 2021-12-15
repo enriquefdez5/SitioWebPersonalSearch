@@ -18,37 +18,50 @@ function mostrarEnlace(enlace) {
     }
 }
 
+// Lista de objectos que contendrán el contenido y enlace que se mostrará al usuario.
 let enlaces = []
+// Se inicializa el contenido del str que será devuelto al usuario.
 let str = "<div class='container'> <h2>Resultados de la búsqueda</h2>"
 
+// Al cargar la ventana
 window.addEventListener("load", () => {
-    const urlParams = new URLSearchParams(window.location.search)
-    let input = urlParams.get("input")
-    $("#search").load("index.html #main", function (data) {
-        recursiveEach($(data), enlaces, input, "index.html")
-        $("#search").load("aficiones.html #main", function (data2) {
-            recursiveEach($(data2), enlaces, input, "aficiones.html")
-            $("#search").load("musica.html #main", function (data3) {
-                recursiveEach($(data3), enlaces, input, "musica.html")
-                $("#search").load("pueblo.html #main", function (data4) {
-                    recursiveEach($(data4), enlaces, input, "pueblo.html")
-                    if (enlaces.length == 0) {
-                        str = str.concat("<p>No se ha encontrado ningún resultado...</p></div>")
-                    }
-                    else {
-                        str = str.concat("<p>Se han encontrado " + enlaces.length + " resultados</p><div id='resultados' class='container'>")
-                        for (enlace of enlaces) {
-                            str = str.concat("<div class='container searchresult'><a class='grande' href='" + enlace.enlace + "'>" + mostrarEnlace(enlace.enlace) + "</a><p>" + enlace.contenido + "</p></div>")
+    if (window.location.href.includes("busquedas")) {
+        const urlParams = new URLSearchParams(window.location.search)
+        let input = urlParams.get("input")
+        $("#search").load("index.html #main", function (data) {
+            recursiveEach($(data), enlaces, input, "index.html")
+            $("#search").load("aficiones.html #main", function (data2) {
+                recursiveEach($(data2), enlaces, input, "aficiones.html")
+                $("#search").load("musica.html #main", function (data3) {
+                    recursiveEach($(data3), enlaces, input, "musica.html")
+                    $("#search").load("pueblo.html #main", function (data4) {
+                        recursiveEach($(data4), enlaces, input, "pueblo.html")
+                        if (enlaces.length == 0) {
+                            str = str.concat("<p>No se ha encontrado ningún resultado...</p></div>")
                         }
-                        str.concat("</div></div>")
-                    }
-                    $("#main2").append(str.toString())
-                    $("#search").remove()
+                        else {
+                            str = str.concat("<p>Se han encontrado " + enlaces.length + " resultados</p><div id='resultados' class='container'>")
+                            for (enlace of enlaces) {
+                                str = str.concat("<div class='container searchresult'><a class='grande' href='" + enlace.enlace + "'>" + mostrarEnlace(enlace.enlace) + "</a><p>" + enlace.contenido + "</p></div>")
+                            }
+                            str.concat("</div></div>")
+                        }
+                        $("#main2").append(str.toString())
+                        $("#search").remove()
+                    })
                 })
             })
         })
-    })
+    }
 })
+
+
+/**
+ * Función que es llamada por el botón al haber hecho click sobre él
+ * Recupera el contenido del campo de búsqueda y carga el html sobre el que aparecerán los resultados de la búsqueda
+ * (busquedas.html). Además pasa como parámetro el valor del input ?input=+input.
+ * Al cargar la ventana se produce un evento que cargará el código escrito antes de esta función.
+ */
 function search() {
     let input = $("#searchInput").val()
     window.location.href = "busquedas.html?input="+input
